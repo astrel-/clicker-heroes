@@ -1,3 +1,69 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<div class="container">
+      <h2 id="title">Clicker heroes</h2>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+            Paste your save file
+        </div>
+        <div class="panel-body">
+          <input id="save" class="form-control" type="text" {{bind-attr value=save}}>
+          <a href="#" class="btn btn-sm btn-default" {{action 'parse'}}>Parse</a>
+        </div>
+      </div>
+    </div>
 
-{{outlet}}
+    <div class="col-sm-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Lister
+        </div>
+        <div class="panel-body">
+        <input id="parsed" class="form-control" type="text" {{bind-attr parsedData}}>
+        <a href="#" class="btn btn-sm btn-default" {{action 'copy'}}>Copy to clipboard</a>
+        {{#if notParsed}}
+          <div class="well">
+            something went wrong
+          </div>
+        {{/if}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-default clickable">
+      <div class="panel-heading" {{action 'toggle' 'showZone'}}>
+        Optimal zone
+      </div>
+      {{#if showZone}}
+      <div class="panel-body">
+        test
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  </div>
+
+  <div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-default clickable">
+      <div class="panel-heading" {{action 'toggle' 'showRules'}}>
+        Golden rules
+      </div>
+      {{#if showRules}}
+      <div class="panel-body">
+        test
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  </div>
+
+</div>
+
+
+
+
+
